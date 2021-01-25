@@ -19,5 +19,7 @@
     - name: Clone html repo
       git:
         clone: yes
-        dest: /var/www/html/
-        repo: 'https://github.com/Xelzs/axentix-sample.git'
+        dest: /var/www/jenkins
+        repo: 'https://github.com/Xelzs/jenkins-ansible.git'
+    - name: Move only html file to www
+      shell: mv /var/www/jenkins/index.html /var/www/html/index.html
