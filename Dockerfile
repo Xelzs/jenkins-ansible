@@ -7,10 +7,10 @@ RUN mkdir /home/ansible/playbook
 
 WORKDIR /home/ansible/playbook
 
-COPY key/tp_dev_ynov.pem tp_dev_ynov.pem
+COPY key/tp_dev_ynov.pem /home/ansible/tp_dev_ynov.pem
 
 RUN chown -R ansible:ansible /home/ansible/playbook && \
-  chmod 600 tp_dev_ynov.pem
+  chmod 600 /home/ansible/tp_dev_ynov.pem
 
 USER ansible
 
