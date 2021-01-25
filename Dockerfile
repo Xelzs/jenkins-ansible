@@ -9,9 +9,11 @@ WORKDIR /home/ansible/playbook
 
 COPY tp_dev_ynov.pem tp_dev_ynov.pem
 
-RUN chmod 600 tp_dev_ynov.pem && \
-  chown -R ansible:ansible /home/ansible/playbook
+RUN chown -R ansible:ansible /home/ansible/playbook && \
+  chmod 600 tp_dev_ynov.pem
 
 USER ansible
+
+RUN ls -lah .
 
 ENTRYPOINT [ "" ]
