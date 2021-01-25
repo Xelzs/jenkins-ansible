@@ -10,4 +10,4 @@ WORKDIR /home/ansible/playbook
 
 COPY tp_dev_ynov.pem tp_dev_ynov.pem
 
-ENTRYPOINT [ "/bin/sh" ]
+ENTRYPOINT [ "" ]
