@@ -1,0 +1,23 @@
+---
+- hosts: instances
+  become: yes
+  gather_facts: true
+  tasks:
+    - name: Apt update & upgrade
+      apt:
+        update_cache: yes
+        upgrade: yes
+    - name: Install NGINX
+      apt:
+        name:
+          - nginx
+          - git
+    - name: Start NGiNX
+      service:
+        name: nginx
+        state: started
+    - name: Clone html repo
+      git:
+        clone: yes
+        dest: /var/www/html/
+        repo: 'https://github.com/Xelzs/axentix-sample.git'
